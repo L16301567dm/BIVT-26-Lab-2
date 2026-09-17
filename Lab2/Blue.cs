@@ -131,10 +131,21 @@ namespace Lab2
             int c = 0;
 
             // code here
-            
+            a = S;
+            double day = S;
+            double a0 = S;
+
+            for (int i = 1; i < 10_000; i++)
+            {
+                if (i == 7) a = day;
+                if (day >= 100 && b == 0) b = i;
+                if (a0 > 42 && c == 0) c = i;
+                a0 += a0 / 100 * I;
+                day += a0;
+            }
             // end
 
-            return (a, b, c);
+            return (a, b, c - 1);
         }
         public (double SS, double SY) Task8(double a, double b, double h)
         {
