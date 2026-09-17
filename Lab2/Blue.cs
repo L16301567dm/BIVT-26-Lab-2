@@ -151,11 +151,28 @@ namespace Lab2
         {
             double SS = 0;
             double SY = 0;
-
+            double s = 0;
             // code here
-
+            for (double x = a; x <= b + 0.000000001; x += h)
+            {
+                double fact = 1;
+                double pow = 1;
+                s = 0;
+                for (int i = 0; i < 10_000; i++)
+                {
+                    if (i > 0)
+                    {
+                        fact *= i;
+                        pow *= x * x;
+                    }
+                    double r = (2 * i + 1) * pow / fact;
+                    s += r;
+                    if (Math.Abs(r) < E) break;
+                }
+                SS += s;
+                SY += (1 + 2 * x * x) * Math.Exp(x * x);
+            }
             // end
-
             return (SS, SY);
         }
     }
