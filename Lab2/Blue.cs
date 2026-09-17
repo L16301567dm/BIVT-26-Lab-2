@@ -12,6 +12,13 @@ namespace Lab2
             double answer = 0;
 
             // code here
+            double a = 1.0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                answer += Math.Sin(i * x) / a;
+                a *= x;
+            }
 
             // end
 
@@ -20,9 +27,14 @@ namespace Lab2
         public double Task2(int n)
         {
             double answer = 0;
-
+            long factorial = 1;
             // code here
-
+            for (int i = 1; i <= n; i++)
+            {
+                factorial = 1;
+                for (int j = 1; j <= i; j++) factorial *= j;
+                answer += Math.Pow(-1, i) * Math.Pow(5, i) / factorial;
+            }
             // end
 
             return answer;
@@ -32,7 +44,18 @@ namespace Lab2
             long answer = 0;
 
             // code here
+            int first = 0;
+            int second = 1;
+            int a = 0;
 
+                for (int i = 0; i < n; i++)
+                {
+                    answer += first;
+                    a = first + second;
+                    first = second;
+                    second = a;
+
+                }
             // end
 
             return answer;
@@ -42,7 +65,17 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            int s = 0;
+            for (int n = 1; n < 10_000; n++)
+            {
+                int b = a + (n - 1) * h;
+                if (s + b <= L)
+                {
+                    s += b;
+                    answer = n;
+                }
+                else break;
+            }
             // end
 
             return answer;
@@ -52,7 +85,22 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            double ch = 0, zn = 1;
+            double elem = ch / zn;
+            int i = 1;
+            while (true)
+            {
+                ch += i;
+                zn *= x;
+                answer += elem;
+                elem = ch / zn;
+                i++;
+                if (elem > 0.0001)
+                {
+                    continue;
+                }
+                else break;
+            }
             // end
 
             return answer;
