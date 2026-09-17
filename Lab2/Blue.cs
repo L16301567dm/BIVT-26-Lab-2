@@ -110,7 +110,16 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            int schet = 0;
+            for (int i = 0; i < 10_000; i++)
+            {
+                while (S <= L)
+                {
+                    S *= 2;
+                    schet += 1;
+                }
+                answer = schet  * h;
+            }
             // end
 
             return answer;
@@ -122,7 +131,7 @@ namespace Lab2
             int c = 0;
 
             // code here
-
+            
             // end
 
             return (a, b, c);
