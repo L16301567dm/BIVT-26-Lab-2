@@ -27,14 +27,16 @@ namespace Lab2
         public double Task2(int n)
         {
             double answer = 0;
-            long factorial = 1;
             // code here
-            for (int i = 1; i <= n; i++)
+            double power = 5;
+            for (double i = 1, fact = 1; i <= n; i++)
             {
-                factorial = 1;
-                for (int j = 1; j <= i; j++) factorial *= j;
-                answer += Math.Pow(-1, i) * Math.Pow(5, i) / factorial;
+                fact *= i;
+                if (i % 2 != 0) answer -= power / fact;
+                else answer += power / fact;
+                power *= 5;
             }
+
             // end
 
             return answer;
